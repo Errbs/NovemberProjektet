@@ -18,12 +18,14 @@ namespace NovProj
 
             ConsoleKeyInfo keyInfo = Console.ReadKey();
             ConsoleKey key = keyInfo.Key;
-            test.Move(key, keyInfo, xMove, yMove);
+            bool keyPressed;
+            /*test.Move(key, keyInfo, xMove, yMove);
             test.GetX();
             test.GetY();
             keyInfo = Console.ReadKey();
+            */
 
-            /*bool keyPressed = keyInfo != null;
+            keyPressed = keyInfo != null;
 
           
             while (keyPressed == true)
@@ -69,7 +71,7 @@ namespace NovProj
 
 
             }
-            */
+           
         }
 
            

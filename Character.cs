@@ -44,9 +44,11 @@ namespace NovProj
         }
         NEED TO COMMENT TO TEST CODE
        */
-        public void Move(ConsoleKey key, ConsoleKeyInfo keyInfo ,int xMove, int yMove)
+        public void Move(/*ConsoleKey key, ConsoleKeyInfo keyInfo ,*/int xMove, int yMove)
         {
-
+            x = xMove;
+            y = yMove;
+            /*
             if (key == ConsoleKey.A)
             {
                 x = xMove++;
@@ -66,7 +68,7 @@ namespace NovProj
             }
             keyInfo = Console.ReadKey();
 
-           
+           */
                 
                
                    
