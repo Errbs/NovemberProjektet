@@ -44,8 +44,28 @@ namespace NovProj
         }
         NEED TO COMMENT TO TEST CODE
        */
-        public void Move(/*ConsoleKey key, ConsoleKeyInfo keyInfo ,*/int xMove, int yMove)
+        public void Move(/*ConsoleKey key, ConsoleKeyInfo keyInfo ,*/int xMove, int yMove, bool positive)
         {
+            if (positive == true)
+            {
+                xMove++;
+                yMove++;
+            }
+            else if(positive == false)
+            {
+                xMove--;
+                yMove--;
+            }
+            /*
+            else if (yMove > 0)
+            {
+                yMove++;
+            }
+            else if (yMove < 0)
+            {
+                yMove--;
+            }
+            */
             x = xMove;
             y = yMove;
             /*

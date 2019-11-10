@@ -19,6 +19,7 @@ namespace NovProj
             ConsoleKeyInfo keyInfo = Console.ReadKey();
             ConsoleKey key = keyInfo.Key;
             bool keyPressed;
+            bool positive;
             /*test.Move(key, keyInfo, xMove, yMove);
             test.GetX();
             test.GetY();
@@ -33,35 +34,39 @@ namespace NovProj
                 
                     if (key == ConsoleKey.A)
                     {
+                        positive = true;
+                        test.Move(xMove, yMove, positive);
                         xMove++;
-                        test.Move(xMove, yMove);
                         test.GetX();
                         
                        
                     }
-                    else if (key == ConsoleKey.D)
+                    if (key == ConsoleKey.D)
                     {
-                       xMove--;
-                        test.Move(xMove, yMove);
+                        positive = false;
+                        test.Move(xMove, yMove, positive);
+                        xMove--;
                         test.GetX();
                         
                     }
-                    else if (key == ConsoleKey.W)
+                    if (key == ConsoleKey.W)
                     {
+                       positive = true;
+                       test.Move(xMove, yMove, positive);
                        yMove++;
-                        test.Move(xMove, yMove);
                         test.GetY();
                        
                     }
-                    else if (key == ConsoleKey.S)
-                    {
+                     if (key == ConsoleKey.S)
+                     {
+                        positive = false;
+                        test.Move(xMove, yMove, positive);
                         yMove--;
-                        test.Move(xMove, yMove);
                         test.GetY();
                                             
 
-                    }
-                    else if(key!=ConsoleKey.S||key!=ConsoleKey.A||key!=ConsoleKey.W||key!=ConsoleKey.D)
+                     }
+                    else if(key!=ConsoleKey.S&&key!=ConsoleKey.A&&key!=ConsoleKey.W&&key!=ConsoleKey.D)
                     {
                         Console.WriteLine("that's not a move key, use WASD.");
                       
