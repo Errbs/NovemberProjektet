@@ -13,8 +13,9 @@ namespace NovProj
         protected int hp;
         protected int mp;
         protected int strenght;
-        protected int x = 0;
-        protected int y = 0;
+        protected int x ;
+        protected int y ;
+       
 
         public void AddToInventory(Item item)
         {
@@ -32,57 +33,69 @@ namespace NovProj
         {
             inventory.UseItem(n, this);
         }
+        
         public int GetInventoryLenght()
         {
+           return inventory.GetLenght();
+        }
+        /*public string GetItemInfo(int n)
+        {
+           return inventory.GetItemInfo(n);
+        }
+        NEED TO COMMENT TO TEST CODE
+       */
+        public void Move(ConsoleKey key, ConsoleKeyInfo keyInfo ,int xMove, int yMove)
+        {
 
-        }
-        public string GetItemInfo(int n)
-        {
-            inventory.GetItemInfo(n);
-        }
-        public void Move(int xMove, int yMove)
-        {
-            if (xMove>x||xMove<x)
+            if (key == ConsoleKey.A)
             {
+                x = xMove++;
+            }
+            else if (key == ConsoleKey.D)
+            {
+                x = xMove--;
+              
+            }
+            if (key == ConsoleKey.W)
+            {
+                y = yMove++;
+            }
+            else if (key == ConsoleKey.S)
+            {
+                y = yMove--;
+            }
+            keyInfo = Console.ReadKey();
+
+           
+                
                
-                x = xMove;
-            }
-            /*else if (xMove < x)
-            {
-                x = xMove;
-            }
-            */
-            if (yMove>y|| yMove < y)
-            {
-                y = yMove;
-            }
-           /* else if (yMove < y)
-            {
-                y = yMove;
-            }
-            */
+                   
+           
             // testing if it would work
         }
         public void SetPosition(int xPos, int yPos)
         {
-            // do later
+            xPos = x;
+            yPos = y;
        
         }
         public int GetX()
         {
+            Console.WriteLine(x);
             return x;
         }
         public int GetY()
         {
+            Console.WriteLine(y);
             return y;
         }
         public int GetHp()
         {
-
+            return hp;
         }
         public int ModifyHp(int amount)
         {
-
+            return amount;
         }
         public void Attack(Character target)
         {
