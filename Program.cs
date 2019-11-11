@@ -16,60 +16,45 @@ namespace NovProj
             int yMove = 0;
 
 
-            ConsoleKeyInfo keyInfo = Console.ReadKey();
-            ConsoleKey key = keyInfo.Key;
+            
             bool keyPressed;
-            bool positive;
-            /*test.Move(key, keyInfo, xMove, yMove);
-            test.GetX();
-            test.GetY();
-            keyInfo = Console.ReadKey();
-            */
+                      
 
-            keyPressed = keyInfo != null;
+            keyPressed = true;
 
           
             while (keyPressed == true)
             {
-                
-                    if (key == ConsoleKey.A)
-                    {
-                        positive = true;
-                        test.Move(xMove, yMove, positive);
-                        xMove++;
-                        test.GetX();
-                        
-                       
-                    }
-                    if (key == ConsoleKey.D)
-                    {
-                        positive = false;
-                        test.Move(xMove, yMove, positive);
-                        xMove--;
-                        test.GetX();
-                        
-                    }
-                    if (key == ConsoleKey.W)
-                    {
-                       positive = true;
-                       test.Move(xMove, yMove, positive);
-                       yMove++;
-                        test.GetY();
-                       
-                    }
-                     if (key == ConsoleKey.S)
-                     {
-                        positive = false;
-                        test.Move(xMove, yMove, positive);
-                        yMove--;
-                        test.GetY();
-                                            
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
+                ConsoleKey key = keyInfo.Key;
 
-                     }
+                if (key == ConsoleKey.A)
+                {
+                    test.Move(-1, 0);
+                    test.GetX();
+
+                }
+                if (key == ConsoleKey.D)
+                {
+                      
+                    test.Move(+1,0);
+                    test.GetX();                           
+                }
+                if (key == ConsoleKey.W)
+                {
+                      
+                    test.Move(0,+1);
+                    test.GetY();
+                }
+                if (key == ConsoleKey.S)
+                {
+                    test.Move(0,-1);
+                    test.GetY();
+                                   
+                 }
                     else if(key!=ConsoleKey.S&&key!=ConsoleKey.A&&key!=ConsoleKey.W&&key!=ConsoleKey.D)
                     {
                         Console.WriteLine("that's not a move key, use WASD.");
-                      
                     }
                     keyInfo = Console.ReadKey();
                 //This while is supposed to make the character move, it does not work because the first key press decides if it continus to be positive and negative and the values for x and y gets mixed up

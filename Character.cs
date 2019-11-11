@@ -13,8 +13,8 @@ namespace NovProj
         protected int hp;
         protected int mp;
         protected int strenght;
-        protected int x ;
-        protected int y ;
+        protected int x;
+        protected int y;
        
 
         public void AddToInventory(Item item)
@@ -44,56 +44,13 @@ namespace NovProj
         }
         NEED TO COMMENT TO TEST CODE
        */
-        public void Move(/*ConsoleKey key, ConsoleKeyInfo keyInfo ,*/int xMove, int yMove, bool positive)
+        public void Move(int xMove, int yMove)
         {
-            if (positive == true)
-            {
-                xMove++;
-                yMove++;
-            }
-            else if(positive == false)
-            {
-                xMove--;
-                yMove--;
-            }
-            /*
-            else if (yMove > 0)
-            {
-                yMove++;
-            }
-            else if (yMove < 0)
-            {
-                yMove--;
-            }
-            */
-            x = xMove;
-            y = yMove;
-            /*
-            if (key == ConsoleKey.A)
-            {
-                x = xMove++;
-            }
-            else if (key == ConsoleKey.D)
-            {
-                x = xMove--;
-              
-            }
-            if (key == ConsoleKey.W)
-            {
-                y = yMove++;
-            }
-            else if (key == ConsoleKey.S)
-            {
-                y = yMove--;
-            }
-            keyInfo = Console.ReadKey();
-
-           */
-                
-               
-                   
-           
-            // testing if it would work
+            
+            x += xMove;
+            y += yMove;
+            
+           // The method takes input in form of ints from main and adds those values to x and/ or y.
         }
         public void SetPosition(int xPos, int yPos)
         {
