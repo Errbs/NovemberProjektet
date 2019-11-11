@@ -11,19 +11,14 @@ namespace NovProj
         static void Main(string[] args)
         {
             Character test = new Character();
+                        
+            bool movePlayer;
+                    
 
-            int xMove = 0;
-            int yMove = 0;
-
-
-            
-            bool keyPressed;
-                      
-
-            keyPressed = true;
+            movePlayer = true;
 
           
-            while (keyPressed == true)
+            while (movePlayer == true)
             {
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
                 ConsoleKey key = keyInfo.Key;
@@ -51,13 +46,20 @@ namespace NovProj
                     test.Move(0,-1);
                     test.GetY();
                                    
-                 }
-                    else if(key!=ConsoleKey.S&&key!=ConsoleKey.A&&key!=ConsoleKey.W&&key!=ConsoleKey.D)
-                    {
-                        Console.WriteLine("that's not a move key, use WASD.");
-                    }
-                    keyInfo = Console.ReadKey();
-                //This while is supposed to make the character move, it does not work because the first key press decides if it continus to be positive and negative and the values for x and y gets mixed up
+                }
+                else if(key!=ConsoleKey.S&&key!=ConsoleKey.A&&key!=ConsoleKey.W&&key!=ConsoleKey.D)
+                {
+                    Console.WriteLine("that's not a move key, use WASD.");
+                }
+
+                keyInfo = Console.ReadKey();
+
+                /*
+                This while loop will loop when the bool movePlayer is true, which I'll define later. 
+                It uses variable ConsoleKeyInfo to read what key a player pressed and the ConsoleKey variable to represent and identify that key.
+                The loop contains if statements that runs the Move method of the Character instance test with an increased or decreased value on the xMove or yMove parameter with 1 depending on what key in the key group WASD the player presses. 
+                Then it runs the instance test of class Characters GetX respectivly GetY depending on which one was effected in the Move method.
+                */
 
 
             }
