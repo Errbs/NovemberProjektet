@@ -9,11 +9,11 @@ namespace NovProj
     class Item
     {
         protected string name;
-        public string GetInfo()
+        public virtual string GetInfo()
         {
-
+            return name;
         }
-        public void Use(Character target)
+        public virtual void Use(Character target) //Virtual makes the method able to override
         {
 
         }

@@ -10,10 +10,16 @@ namespace NovProj
     {
         static void Main(string[] args)
         {
-            Character test = new Character();
+            Character test = new Character(); //Creates an instance of the class Character.
                         
             bool movePlayer;
-                    
+
+            Item potion = new Healthpotion();
+
+            
+            Console.WriteLine(potion.GetInfo()); 
+            potion.Use(test);
+            Console.WriteLine(test.GetHp()); 
 
             movePlayer = true;
 
@@ -26,25 +32,25 @@ namespace NovProj
                 if (key == ConsoleKey.A)
                 {
                     test.Move(-1, 0);
-                    test.GetX();
+                    Console.WriteLine(test.GetX());
 
                 }
                 if (key == ConsoleKey.D)
                 {
                       
                     test.Move(+1,0);
-                    test.GetX();                           
+                    Console.WriteLine(test.GetX());                            
                 }
                 if (key == ConsoleKey.W)
                 {
                       
                     test.Move(0,+1);
-                    test.GetY();
+                    Console.WriteLine(test.GetY());
                 }
                 if (key == ConsoleKey.S)
                 {
                     test.Move(0,-1);
-                    test.GetY();
+                    Console.WriteLine(test.GetY());
                                    
                 }
                 else if(key!=ConsoleKey.S&&key!=ConsoleKey.A&&key!=ConsoleKey.W&&key!=ConsoleKey.D)

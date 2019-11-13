@@ -10,7 +10,7 @@ namespace NovProj
     {
         protected string name;
         protected Inventory inventory;
-        protected int hp;
+        protected int hp = 10;
         protected int mp;
         protected int strenght;
         protected int x;
@@ -38,12 +38,12 @@ namespace NovProj
         {
            return inventory.GetLenght();
         }
-        /*public string GetItemInfo(int n)
+        /*
+        public string GetItemInfo(int n)
         {
-           return inventory.GetItemInfo(n);
+           return inventory.GetItemInfo(n); // is not a string because it is a "class" list over Item, it will most likely work once I've added subclasses for Item.
         }
-        NEED TO COMMENT TO TEST CODE
-       */
+         */     
         public void Move(int xMove, int yMove)
         {
             
@@ -56,26 +56,31 @@ namespace NovProj
         {
             xPos = x;
             yPos = y;
-       
+            Console.WriteLine("Player Position: " + x + ", " + y);
+                   
         }
+        //I don't know why this method would be useful but it is supposed to set the position of the player.
         public int GetX()
         {
-            Console.WriteLine(x);
             return x;
         }
+        //Getx returns x
         public int GetY()
         {
-            Console.WriteLine(y);
             return y;
         }
+        //GetY returns y
         public int GetHp()
         {
             return hp;
         }
+        //GetHp returns hp
         public int ModifyHp(int amount)
         {
-            return amount;
+           return hp += amount; 
+            
         }
+        //ModifyHp adds parameter amount to hp and returns it 
         public void Attack(Character target)
         {
 

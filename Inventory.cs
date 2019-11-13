@@ -18,17 +18,19 @@ namespace NovProj
         {
             items.Remove(items[n]); //removes the item with index n in the items list
         }
+       
         public string GetItemInfo(int n)
         {
             if (n != 0 || n < 0 && n < items.Count)
             {
-                Console.WriteLine("Item doesn't exist!");
+               return "Item doesn't exist!";
             }
             else
             {
-                return items[n]; //can't return because it isn't a string
+                return items[n].GetInfo(); //Returns the item with index n in the item lists GetInfo method
             }
         }
+       
         public void UseItem(int n, Character c)
         {
             if (n!= 0||n<0 && n < items.Count)
@@ -37,9 +39,10 @@ namespace NovProj
             }
             else
             {
-                Remove(n);
+               Remove(n);
             }
         }
+        //UseItem 
         public int GetLenght()
         {
             return items.Count();
