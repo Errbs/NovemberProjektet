@@ -9,41 +9,42 @@ namespace NovProj
     class Character
     {
         protected string name;
-        protected Inventory inventory;
+        protected Inventory inventory = new Inventory(); // Adds new Inventory after to create an instance of the class, so that the methods of the class can be used.
         protected int hp = 10;
-        protected int mp;
-        protected int strenght;
+        protected int mp; // I have no idea what this variable is supposed to be used for?? It's never explained in the instructions.
+        protected int strenght; 
         protected int x;
         protected int y;
        
 
-        public void AddToInventory(Item item)
+        public void AddToInventory(Item item) // This method calls upon the Add method from the Inventory class and runs that code.
         {
             inventory.Add(item);
+            
         }
-        public void RemoveFromInventory(int n)
+        public void RemoveFromInventory(int n) // This method calls upon the Remove method from the Inventory class and runs that code.
         {
             inventory.Remove(n);
         }
-        public void UseItem(int n, Character target)
+        public void UseItem(int n, Character target) // This method calls upon the UseItem method from the Inventory class and runs that code. This one is used to use the items on other characters.
         {
             inventory.UseItem(n, target);
         }
-        public void UseItem(int n)
+        public void UseItem(int n) // This method calls upon the UseItem method from the Inventory class and runs that code. This one is used to use the items on the character.
         {
             inventory.UseItem(n, this);
         }
         
-        public int GetInventoryLenght()
+        public int GetInventoryLenght() // This method calls upon the GetInventory method from the Inventory class and runs that code.
         {
            return inventory.GetLenght();
         }
-        /*
-        public string GetItemInfo(int n)
+       
+        public string GetItemInfo(int n) // This method returns information from inventorys GetItemInfo for item n
         {
-           return inventory.GetItemInfo(n); // is not a string because it is a "class" list over Item, it will most likely work once I've added subclasses for Item.
+           return inventory.GetItemInfo(n);
         }
-         */     
+         
         public void Move(int xMove, int yMove)
         {
             
@@ -54,12 +55,11 @@ namespace NovProj
         }
         public void SetPosition(int xPos, int yPos)
         {
-            xPos = x;
-            yPos = y;
-            Console.WriteLine("Player Position: " + x + ", " + y);
-                   
+            x = xPos;
+            y = yPos;
+                               
         }
-        //I don't know why this method would be useful but it is supposed to set the position of the player.
+        //The values of x and y is equal to the parameters xPos, yPos taken from the main code.
         public int GetX()
         {
             return x;

@@ -9,7 +9,7 @@ namespace NovProj
     class Item
     {
         protected string name;
-        public virtual string GetInfo()
+        public virtual string GetInfo() //Virtual makes the method able to override
         {
             return name;
         }
