@@ -75,30 +75,36 @@ namespace NovProj
                 }
                 if (test.GetX() == isX && test.GetY() == isY)
                 {
-                    int randomizedItemFound = generateNumber.Next(1, 2); // The limit is set for testing if the code works.
-                    if(randomizedItemFound == 1)
+                    int randomizedItemFound = generateNumber.Next(0, 1); // The limit is set for testing if the code works. randomizedItemFound is a randomized value.
+                    if(randomizedItemFound == 0) // If the value is 0 Healthpotion is found and the player can add it to inventory by pressing E and then press I to get info about the item.
                     {
                         Console.WriteLine("Healthpotion Found!");
                         Console.WriteLine("Pick up? Press E.");
-                        if (key == ConsoleKey.E) // The code stops and doesn't run the code after this.
+                        keyInfo = Console.ReadKey(); // Takes input from player.
+                        Console.Clear(); // Clears the console.
+                        key = keyInfo.Key; // key is equal to the player input.
+                        if (key == ConsoleKey.E) // If key is E add potion to inventory.
                         {
                             test.AddToInventory(potion);
                             Console.WriteLine("For info about this item press I.");
-                            if(key == ConsoleKey.I)
+                            keyInfo = Console.ReadKey();
+                             Console.Clear();
+                            key = keyInfo.Key;
+                            if (key == ConsoleKey.I) // If key is I write out the info from the GetItemInfo method.
                             {
-                                test.GetItemInfo(randomizedItemFound);
+                                Console.WriteLine(test.GetItemInfo(randomizedItemFound));  
                             }
                         }
                        
 
                     }
-                    else if(randomizedItemFound == 2) // This never runs I don't know why
+                    else if(randomizedItemFound == 1 )// This never runs I don't know why
                     {
                         Console.WriteLine("Cursed Item Found!");
                         Console.WriteLine("Pick up? Press E");
                         if (key == ConsoleKey.E)
                         {
-                            Console.WriteLine(itemCursed + " added to inventory."); // itemCursed.name or itemCursed.CursedItemName doesn't work and I don't fully understand why
+                            Console.WriteLine(itemCursed + " added to inventory."); // itemCursed.name or itemCursed.CursedItemName doesn't work and I don't fully understand why. To better this I could make a list of choices and let the player choose with a marker and the enter key.S
                             test.AddToInventory(itemCursed);
                             Console.WriteLine("For info about");
                         }
